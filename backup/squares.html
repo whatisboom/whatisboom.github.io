@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Brandon Jernigan: Web Design, Games, Beer.</title>
+	<meta charset="UTF-8" />
+	<meta name="author" content="Brandon Jernigan" /> 
+	<meta name="copyright" content="Copyright (c) 2011 Brandon Jernigan" /> 
+	<meta name="description" content="A collection of links to the best parts of my life. Web design, music, gaming, and beer." /> 
+	<meta name="keywords" content="Brandon Jernigan, web design, homebrew" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="/square-style.css" />
+	<!--[if lte IE 8]>
+		<script src="/html5.js" type="text/javascript"></script>
+	<![endif]-->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		var interval = 2500;
+		function randomFromTo(from, to){
+			return Math.floor(Math.random() * (to - from + 1) + from);
+		}
+
+		function createSquares() {
+			for (i=0;i<26;i++) { //rows
+				for(j=0;j<48;j++) {
+					$("#squares").append("<div class='square'></div>");
+				}
+				$("#squares").append("<div class='clear'></div>");
+			}
+		}
+		
+		function squares() {
+			var squares = $(".square");
+			for (i=0;i<squares.length;i++) {
+				var seed = randomFromTo(1,100);
+				$(squares[i]).animate({opacity: seed/100},interval);
+			}
+		}
+		
+		$(document).ready(function() {
+			createSquares();
+			setInterval(function() {
+				squares();
+			},interval+500);
+		});
+	</script>
+</head>
+<body>
+<div id="squares">
+</div>
+</body>
+</html>

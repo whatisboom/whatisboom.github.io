@@ -1,0 +1,71 @@
+html, body {
+  background: #1a242f;
+  height: 100%; }
+
+h1 {
+  color: #bdc3c7;
+  font-size: 125px;
+  font-weight: 400;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 30px;
+  -webkit-font-smoothing: antialiased; }
+
+.cell {
+  margin-bottom: 20px;
+  display: block;
+  min-height: 140px;
+  border-radius: 3px; }
+
+a, a:link, a:hover {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  transform: rotate(0); }
+a img {
+  margin: 0 auto;
+  height: 100px;
+  display: block;
+  position: relative;
+  top: 20px; }
+
+.facebook {
+  background-color: #3b5998; }
+
+.twitter {
+  background-color: #00aced; }
+
+.tumblr {
+  background-color: #32506d; }
+
+.email {
+  background-color: #c8c8c8; }
+
+.brewtoad {
+  background-color: #c47335; }
+
+.steam {
+  background-color: #444; }
+
+.instagram {
+  background-color: #bb0000; }
+
+.linkedin {
+  background-color: #007bb6; }
+
+.lastfm {
+  background-color: #e31b23; }
+
+.github {
+  background-color: #60b044; }
+
+@media screen and (min-width: 992px) {
+  .cell {
+    opacity: 0.5;
+    transition: all 0.2s linear; }
+    .cell:hover {
+      opacity: 1; } }
+@media screen and (max-width: 991px) {
+  h1 {
+    font-size: 64px; } }
