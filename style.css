@@ -38,6 +38,8 @@ a img {
 
 .email {
   background-color: #32506d; }
+  .email img {
+    top: 30px; }
 
 .brewtoad {
   background-color: #c47335; }
@@ -57,12 +59,23 @@ a img {
 .github {
   background-color: #60b044; }
 
+footer a {
+  color: #333; }
+  footer a:hover {
+    color: #333; }
+
 @media screen and (min-width: 992px) {
   .cell {
     opacity: 0.5;
     transition: all 0.2s linear; }
     .cell:hover {
-      opacity: 1; } }
+      opacity: 1; }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    text-align: right; } }
 @media screen and (max-width: 991px) {
   h1 {
     font-size: 64px; } }

@@ -48,6 +48,9 @@ a {
 }
 .email {
     background-color: rgb(50,80,109);
+    img {
+        top: 30px;
+    }
 }
 .brewtoad {
     background-color: #c47335;
@@ -68,6 +71,16 @@ a {
     background-color: #60b044;
 }
 
+footer {
+    a {
+        color: #333;
+
+        &:hover {
+            color: #333;
+        }
+    }
+}
+
 @media screen and (min-width: 992px) {
     .cell {
         opacity: $linkNormal;
@@ -75,6 +88,13 @@ a {
         &:hover {
             opacity: $linkHover;
         }
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        text-align: right;
     }
 }
 @media screen and (max-width: 991px) {
