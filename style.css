@@ -1,5 +1,5 @@
 html, body {
-  background: #1a242f;
+  background: #1a252f;
   height: 100%; }
 
 h1 {
@@ -36,11 +36,8 @@ a img {
 .twitter {
   background-color: #00aced; }
 
-.tumblr {
-  background-color: #32506d; }
-
 .email {
-  background-color: #c8c8c8; }
+  background-color: #32506d; }
 
 .brewtoad {
   background-color: #c47335; }
@@ -69,3 +66,5 @@ a img {
 @media screen and (max-width: 991px) {
   h1 {
     font-size: 64px; } }
+
+/*# sourceMappingURL=style.css.map */
