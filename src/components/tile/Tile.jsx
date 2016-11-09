@@ -7,19 +7,29 @@ const {
 export class Tile extends React.Component {
     render() {
         const {
-            title,
-            linkUrl
+            icon,
+            linkUrl,
+            network,
+            title
         } = this.props;
+
+        const className = `cell ${network}`;
+
+        const iconPath = `icons/${icon}.svg`;
 
         return (
             <div>
-                <a href={ linkUrl } target="_blank">{ title }</a>
+                <a className={ className } href={ linkUrl } target="_blank">
+                    <img src={ iconPath } alt={ network } />
+                </a>
             </div>
         )
     }
 }
 
 Tile.propTypes = {
+    icon: string.isRequired,
     linkUrl: string.isRequired,
-    title: string.isRequired
+    network: string,
+    title: string
 };
