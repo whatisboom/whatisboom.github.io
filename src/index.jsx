@@ -4,7 +4,7 @@ import {
     Col,
     Grid,
     Row
-} from 'react-bootstrap/lib/';
+} from 'react-bootstrap';
 import {
     Header,
     Tile
