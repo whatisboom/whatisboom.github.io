@@ -1,9 +1,14 @@
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const config = {
-  entry: './src/index.jsx',
+  entry: [
+    'react-hot-loader/patch',
+    './src/index.tsx'
+  ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -12,11 +17,15 @@ const config = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        resolve: {
-          extensions: ['', '.js', '.json'],
-        },
         use: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       },
       {
         test: /\.scss$/,
@@ -31,16 +40,41 @@ const config = {
         use: 'file-loader'
       },
       {
-        test: /\.html$/,
-        use: 'html-loader'
+        test: /\.ts(x)?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/
       }
     ]
   },
-  plugins: [new HtmlWebpackPlugin({
-    inject: false,
-    appMountId: 'app',
-    template: './src/index.html'
-  })],
+  devServer: {
+    'static': {
+      directory: './dist'
+    }
+  },
+  plugins: [
+    // new CopyPlugin({
+    //   patterns: [{ from: 'src/index.html' }],
+    // }),
+    new HtmlWebpackPlugin({
+      templateContent: ({ htmlWebpackPlugin }) => '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>' + htmlWebpackPlugin.options.title + '</title></head><body><div id=\"app\"></div></body></html>',
+      filename: 'index.html',
+      title: 'Brandon Jernigan'
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+    })
+  ],
+  resolve: {
+    extensions: [
+      '.tsx',
+      '.ts',
+      '.js'
+    ],
+    alias: {
+      'react-dom': '@hot-loader/react-dom'
+    }
+  }
 };
 
 module.exports = config;
