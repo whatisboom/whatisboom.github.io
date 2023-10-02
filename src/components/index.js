@@ -1,2 +1,2 @@
-export { Header } from './header/Header';
-export { Tile } from './tile/Tile'
+export { Header } from './header/Header.jsx';
+export { Tile } from './tile/Tile.jsx';

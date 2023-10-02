@@ -1,28 +1,46 @@
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
-var BUILD_DIR = path.resolve(__dirname, 'dist');
-var APP_DIR = path.resolve(__dirname, 'src');
-
-var config = {
-    entry: APP_DIR + '/index.jsx',
-    output: {
-        path: BUILD_DIR,
-        filename: 'bundle.js'
-    },
-    module: {
-        loaders: [
-            {
-                test: /\.jsx?/,
-                include: APP_DIR,
-                loader: 'babel',
-                exclude: /node_modules/
-            }
+const config = {
+  entry: './src/index.jsx',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        resolve: {
+          extensions: ['', '.js', '.json'],
+        },
+        use: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
         ]
-    },
-    resolve: {
-        extensions: ['','.js','.jsx']
-    }
+      },
+      {
+        test: /\.svg$/,
+        use: 'file-loader'
+      },
+      {
+        test: /\.html$/,
+        use: 'html-loader'
+      }
+    ]
+  },
+  plugins: [new HtmlWebpackPlugin({
+    inject: false,
+    appMountId: 'app',
+    template: './src/index.html'
+  })],
 };
 
 module.exports = config;
