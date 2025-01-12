@@ -18,28 +18,42 @@
     <meta property="og:description" content="">
     <meta property="og:locale" content="en_US">
     
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <style>
+      body {
+        background-color: #292c31;
+        color: #ccc;
+        font-family: 'Helvetica Neue', sans-serif;
+        width: 800px;
+        margin: auto;
+      }
+      h1 {
+        color: #6EA7FA;
+        text-shadow: 1px 1px #6880A2;
+        font-size: 48px;
+      }
+      a {
+        color: #F7BE4D;
+      }
+    </style>
 </head>
 
 <body>
+  <h1>Brandon Jernigan</h1>
+  <p>You can find me on <a href="https://github.com/whatisboom">GitHub</a>, <a href="https://linkedin.com/in/whatisboom">LinkedIn</a>, and <a href="https://instsagram.com/whatisboom">Instagram</a>.</p>  
+  <script type="text/javascript">
 
-    <div id="app"></div>
-    <script type="text/javascript" src="/dist/bundle.js"></script>
-    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34607544-1']);
+    _gaq.push(['_trackPageview']);
 
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-34607544-1']);
-      _gaq.push(['_trackPageview']);
+    (function() {
+      if (document.location.origin === 'file://') return;
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
 
-      (function() {
-        if (document.location.origin === 'file://') return;
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
-    </script>
+  </script>
 
 </body>
 
