@@ -22,7 +22,7 @@
         background-color: #292c31;
         color: #ccc;
         font-family: 'Helvetica Neue', sans-serif;
-        width: 800px;
+        max-width: 800px;
         margin: auto;
       }
       h1 {
@@ -49,6 +49,7 @@
       if (document.location.origin === 'file://') return;
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      ga.cache = true;
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
 
